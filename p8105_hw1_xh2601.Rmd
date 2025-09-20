@@ -47,7 +47,7 @@ time_hour: date and time combined.
 The size of this dataset is `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns;  
 and the mean temperature is `r mean(early_january_weather$temp)` degrees in Fahrenheit.
 
-#### Step 4. Make plots
+#### Step 4. Make a plot
 
 ```{r}
 # making a scatter plot, x is "time_hour", y is "temp", and colored based on "humid"
