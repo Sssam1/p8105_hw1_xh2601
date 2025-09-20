@@ -13,12 +13,13 @@ output: github_document
 ```{r}
 # load the moderndive library
 library(moderndive)
+# load the tidyverse library to use ggplot
+library(tidyverse)
 ```
 
 ```{r}
 # load the early_january_weather dataset
 data("early_january_weather")
-
 # list all variable names in the dataset
 names(early_january_weather)
 ```
@@ -45,6 +46,17 @@ time_hour: date and time combined.
 
 The size of this dataset is `r nrow(early_january_weather)` rows and `r ncol(early_january_weather)` columns;  
 and the mean temperature is `r mean(early_january_weather$temp)` degrees in Fahrenheit.
+
+#### Step 4. Make plots
+
+```{r}
+# making a scatter plot, x is "time_hour", y is "temp", and colored based on "humid"
+ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point()
+# export the scatter plot as a .jpg file
+ggsave("scatterplot_temp_by_time.jpg")
+```
+
+Description:  We can see from the scatter plot that the overall temperature went up as January progressed, and the humidity levels were generally higher as the temperature increased. We can also observe that the temperature shifted within each day, indicating the temperature dropped at night and rose during the day.
 
 
 
