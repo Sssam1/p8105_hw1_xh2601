@@ -1,0 +1,8 @@
+---
+title: "p8105_hw1_xh2601"
+author: "Samantha Xinwei Han"
+date: "2025-09-20"
+output: github_document
+---
+
+
